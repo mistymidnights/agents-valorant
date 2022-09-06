@@ -170,21 +170,24 @@ h4 {
   }
 }
 
-@media (max-width: 564px) {
+@media (max-width: 576px) {
   .card-image img {
     height: 200px;
   }
 
   .image-container {
-    height: 200px;
+    height: 132px;
     filter: drop-shadow(5px 0px 10px rgba(34, 34, 34, 0.295));
   }
   .card {
-    width: 245px;
-    height: 594px;
+    width: 221px;
+    height: 397px;
   }
   h4 {
     font-size: 8px;
+  }
+  h3{
+    font-size: 12px;
   }
   .grid-template {
     padding-top: 100px;
@@ -192,6 +195,9 @@ h4 {
   .text-slider {
     top: 45%;
     left: -25px;
+    font-size: 25px;
+  }
+  h1{
     font-size: 25px;
   }
 }
