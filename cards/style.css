@@ -180,11 +180,11 @@ h4 {
     filter: drop-shadow(5px 0px 10px rgba(34, 34, 34, 0.295));
   }
   .card {
-    width: 340px;
-    height: 575px;
+    width: 245px;
+    height: 594px;
   }
   h4 {
-    font-size: 12px;
+    font-size: 8px;
   }
   .grid-template {
     padding-top: 100px;
