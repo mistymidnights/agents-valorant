@@ -1,8 +1,8 @@
-const URL_AGENTS = "https://valorant-api.com/v1/agents";
+const URL_AGENTS = 'https://valorant-api.com/v1/agents';
 const principalContainer = document.querySelector('#app');
 const gridTemplate = document.createElement('div');
-gridTemplate.classList.add('grid-template')
-principalContainer.appendChild(gridTemplate)
+gridTemplate.classList.add('grid-template');
+principalContainer.appendChild(gridTemplate);
 import './style.css';
 
 let mappedAgents;
@@ -32,9 +32,9 @@ const mapAgents = (agents) => {
     name: agent.displayName,
     description: agent.description,
     image: agent.displayIcon,
-    abilities: agent.abilities.map((value)=>{
-      return value.displayName
-    })
+    abilities: agent.abilities.map((value) => {
+      return value.displayName;
+    }),
   }));
 
   console.log(mappedAgents);
@@ -52,37 +52,36 @@ const printAgents = (list) => {
     <figure class="agent-container card" id="${agent.name}">
             <h1>${agent.name}</h1>
             <img class="image-container" src="${agent.image}" alt="${agent.name}" />
-            <h3>${agent.description}</h3>
+            <h3 class="agent-description">${agent.description}</h3>
             <h4>${agent.abilities}</h4>
     </figure>
         `;
-        gridTemplate.innerHTML += agentElement
+    gridTemplate.innerHTML += agentElement;
   }
 };
 
 init();
-
 
 //carrousel
 let isDown = false;
 let startX;
 let scrollLeft;
 
-gridTemplate.addEventListener('mousedown', e => {
+gridTemplate.addEventListener('mousedown', (e) => {
   isDown = true;
   gridTemplate.classList.add('active');
   startX = e.pageX - gridTemplate.offsetLeft;
   scrollLeft = gridTemplate.scrollLeft;
 });
-gridTemplate.addEventListener('mouseleave', _ => {
+gridTemplate.addEventListener('mouseleave', (_) => {
   isDown = false;
   gridTemplate.classList.remove('active');
 });
-gridTemplate.addEventListener('mouseup', _ => {
+gridTemplate.addEventListener('mouseup', (_) => {
   isDown = false;
   gridTemplate.classList.remove('active');
 });
-gridTemplate.addEventListener('mousemove', e => {
+gridTemplate.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - gridTemplate.offsetLeft;
@@ -90,4 +89,3 @@ gridTemplate.addEventListener('mousemove', e => {
   const walk = (x - startX) * SCROLL_SPEED;
   gridTemplate.scrollLeft = scrollLeft - walk;
 });
-
