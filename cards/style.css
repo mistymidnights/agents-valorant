@@ -32,6 +32,7 @@
   height: 100vh;
   scroll-snap-type: both mandatory;
   scroll-padding: 1rem;
+  padding-top: 150px;
 }
 
 h4 {
@@ -165,22 +166,34 @@ h4 {
     font-size: 12px;
   }
   .grid-template {
-    padding-top: 100px;
+    padding-top: 120px;
   }
   .text-slider {
     top: 45%;
     left: -25px;
     font-size: 25px;
   }
+
+  .card-image img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .image-container {
+    height: 232px;
+    width: 232px;
+  }
 }
 
 @media (max-width: 576px) {
   .card-image img {
     height: 200px;
+    width: 200px;
   }
 
   .image-container {
     height: 132px;
+    width: 132px;
     filter: drop-shadow(5px 0px 10px rgba(34, 34, 34, 0.295));
   }
   .card {
@@ -194,8 +207,9 @@ h4 {
     font-size: 10px;
   }
   .grid-template {
-    padding-top: 100px;
-    overflow-y: scroll;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
   }
   .text-slider {
     top: 45%;
